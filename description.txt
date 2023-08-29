@@ -1,0 +1,89 @@
+We will make a virtualenv called myvenv. The general command will be in the format:
+
+command-line
+$ python3 -m venv myvenv
+Start your virtual environment by running:
+
+command-line
+$ source myvenv/bin/activate
+
+Installing Django 
+Now that you have your virtualenv started, you can install Django.
+
+Before we do that, we should make sure we have the latest version of pip, the software that we use to install Django:
+
+command-line
+(myvenv) ~$ python -m pip install --upgrade pip
+pip install -r requirements.txt
+
+Django project
+django-admin startproject mysite
+python manage.py migrate
+
+Starting the web server
+You need to be in the directory that contains the manage.py file (the djangogirls directory). In the console, we can start the web server by running python manage.py runserver:
+
+command-line
+(myvenv) ~/djangogirls$ python manage.py runserver
+
+Creating an application
+To keep everything tidy, we will create a separate application inside our project. It is very nice to have everything organized from the very beginning. To create an application we need to run the following command in the console (from djangogirls directory where manage.py file is):
+
+Mac OS X and Linux:
+(myvenv) ~/djangogirls$ python manage.py startapp blog
+
+mysite/settings.py
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'blog',
+]
+
+
+Create tables for models in your database
+The last step here is to add our new model to our database. First we have to make Django know that we have some changes in our model. (We have just created it!) Go to your console window and type python manage.py makemigrations blog. It will look like this:
+
+command-line
+(myvenv) ~/djangogirls$ python manage.py makemigrations blog
+Migrations for 'blog':
+  blog/migrations/0001_initial.py
+    - Create model Post
+
+
+
+Create tables for models in your database
+The last step here is to add our new model to our database. First we have to make Django know that we have some changes in our model. (We have just created it!) Go to your console window and type python manage.py makemigrations blog. It will look like this:
+
+command-line
+(myvenv) ~/djangogirls$ python manage.py makemigrations blog
+Migrations for 'blog':
+  blog/migrations/0001_initial.py
+    - Create model Post
+Note: Remember to save the files you edit. Otherwise, your computer will execute the previous version which might give you unexpected error messages.
+
+Django prepared a migration file for us that we now have to apply to our database. 
+Type python manage.py migrate blog and the output should be as follows:
+
+command-line
+(myvenv) ~/djangogirls$ python manage.py migrate blog
+Operations to perform:
+  Apply all migrations: blog
+Running migrations:
+  Applying blog.0001_initial... OK
+Hurray! Our Post model is now in o
+
+
+Django admin
+python manage.py createsuperuser
+
+
+GIT
+sudo apt install git
+$ git init
+$ git config --global user.name "Fred Kiptui"
+$ git config --global user.email fredkiptui.58@gmail.com
+git branch -M main
