@@ -87,3 +87,15 @@ $ git init
 $ git config --global user.name "Fred Kiptui"
 $ git config --global user.email fredkiptui.58@gmail.com
 git branch -M main
+
+
+git remote add origin https://github.com/fredkiptui/django-app.git
+git push -u origin main
+
+PYTHON ANYWHERE
+$ pip3.8 install --user pythonanywhere
+$ pa_autoconfigure_django.py --python=3.8 https://github.com/<your-github-username>/my-first-blog.git
+$ pa_autoconfigure_django.py --python=3.8 https://github.com/fredkiptui/django-app.git
+
+SUPERUSER
+python manage.py createsuperuser
